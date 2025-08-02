@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Guía de Desarrollo Web</title>
+  <link rel="icon" href="https://upload.wikimedia.org/wikipedia/commons/6/61/HTML5_logo_and_wordmark.svg">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f8f0fc;
+    }
+
+    header {
+      text-align: center;
+      background: linear-gradient(135deg, #ce93d8, #ba68c8);
+      color: white;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 0 0 40px 40px;
+    }
+
+    .contenedor-portada {
+      max-width: 800px;
+      animation: fadeIn 1.2s ease-out both;
+    }
+
+    header h1 {
+      font-size: 4.5em;
+      margin-bottom: 20px;
+    }
+
+    header p {
+      font-size: 1.5em;
+      margin-bottom: 40px;
+    }
+
+    .iconos img {
+      width: 80px;
+      margin: 0 10px;
+      filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
+    }
+
+    .btn {
+      background-color: white;
+      color: #8e24aa;
+      padding: 15px 35px;
+      border: none;
+      border-radius: 30px;
+      font-size: 1.2em;
+      cursor: pointer;
+      transition: 0.3s;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+
+    .btn:hover {
+      background-color: #f3e5f5;
+    }
+
+    .pagina {
+      display: none;
+      padding: 40px 20px;
+      max-width: 900px;
+      margin: auto;
+      opacity: 0;
+      transition: opacity 0.5s ease;
+    }
+
+    .pagina.active {
+      display: block;
+      opacity: 1;
+    }
+
+    h2 {
+      color: #8e24aa;
+      margin-bottom: 10px;
+    }
+
+    .card {
+      background: white;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      margin-bottom: 20px;
+    }
+
+    .card img {
+      width: 60px;
+      float: right;
+      margin-left: 10px;
+    }
+
+    .nav-buttons {
+      text-align: center;
+      margin-top: 30px;
+    }
+
+    .nav-buttons button {
+      margin: 10px;
+      background-color: #ce93d8;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 20px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .nav-buttons button:hover {
+      background-color: #ab47bc;
+    }
+
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Portada -->
+  <header id="portada" class="active">
+    <div class="contenedor-portada">
+      <h1>🚀 Guía Visual de HTML, CSS y JavaScript</h1>
+      <p>Aprende de forma clara y atractiva las tecnologías básicas del desarrollo web.<br>Sitio web creado por: Mariory Valeriano De La Cruz.</p>
+
+      <div class="iconos">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/61/HTML5_logo_and_wordmark.svg" alt="HTML logo">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/d/d5/CSS3_logo_and_wordmark.svg" alt="CSS logo">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png" alt="JS logo">
+      </div>
+
+      <button class="btn" onclick="mostrar('conceptos')">Comenzar</button>
+    </div>
+  </header>
+
+  <!-- Conceptos -->
+  <section id="conceptos" class="pagina">
+    <h2>🌐 Conceptos Básicos</h2>
+
+    <p style="margin-bottom: 20px;">
+      HTML, CSS y JavaScript son las tecnologías esenciales para construir sitios web.
+      <strong>HTML</strong> es la base, proporciona la estructura y el contenido.
+      <strong>CSS</strong> se encarga del diseño visual y el estilo, como colores, fuentes y distribución.
+      <strong>JavaScript</strong> aporta la interactividad y hace posible que la web responda al usuario.
+      Estas tres herramientas trabajan juntas para crear páginas modernas, atractivas y funcionales.
+    </p>
+
+    <div class="card">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/6/61/HTML5_logo_and_wordmark.svg" alt="HTML">
+      <h3>HTML</h3>
+      <p>Define la estructura de una página web.</p>
+      <button onclick="mostrar('html')">Leer más</button>
+    </div>
+
+    <div class="card">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/d/d5/CSS3_logo_and_wordmark.svg" alt="CSS">
+      <h3>CSS</h3>
+      <p>Da estilo al contenido HTML.</p>
+      <button onclick="mostrar('css')">Leer más</button>
+    </div>
+
+    <div class="card">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png" alt="JS">
+      <h3>JavaScript</h3>
+      <p>Permite interactividad en la web.</p>
+      <button onclick="mostrar('js')">Leer más</button>
+    </div>
+
+    <div class="nav-buttons">
+      <button onclick="mostrar('portada')">⬅ Volver a portada</button>
+    </div>
+  </section>
+
+  <!-- HTML Detalles -->
+  <section id="html" class="pagina">
+    <h2>📄 HTML</h2>
+    <p>
+      HTML (HyperText Markup Language) es el lenguaje que usamos para crear la estructura de una página web.
+      Piensa en él como los bloques de construcción de una casa: define qué va dónde.
+      Con HTML puedes agregar títulos, párrafos, imágenes, enlaces, botones, listas, formularios, videos y mucho más.
+      Es un lenguaje de marcado que utiliza etiquetas como <code>&lt;h1&gt;</code>, <code>&lt;p&gt;</code> o <code>&lt;img&gt;</code> para organizar el contenido.
+      Sin HTML, una página web no tendría nada visible.
+    </p>
+    <pre>
+&lt;h1&gt;Hola Mundo&lt;/h1&gt;
+&lt;p&gt;Bienvenido a mi sitio web&lt;/p&gt;
+    </pre>
+    <div class="nav-buttons">
+      <button onclick="mostrar('conceptos')">⬅ Volver</button>
+    </div>
+  </section>
+
+  <!-- CSS Detalles -->
+  <section id="css" class="pagina">
+    <h2>🎨 CSS</h2>
+    <p>
+      CSS (Cascading Style Sheets) es el lenguaje que permite darle estilo y presentación a una página web.
+      Sirve para cambiar colores, fuentes, tamaños, posiciones, bordes, espaciado, efectos de transición y más.
+      Si HTML es la estructura, CSS sería la decoración: pintura, muebles, diseño y distribución.
+      CSS hace que una web luzca moderna, atractiva y adaptada a diferentes dispositivos. También permite aplicar animaciones, fondos degradados y sombras, entre otras cosas.
+    </p>
+    <pre>
+body {
+  background-color: lavender;
+  font-family: Arial;
+}
+    </pre>
+    <div class="nav-buttons">
+      <button onclick="mostrar('conceptos')">⬅ Volver</button>
+    </div>
+  </section>
+
+  <!-- JavaScript Detalles -->
+  <section id="js" class="pagina">
+    <h2>⚙️ JavaScript</h2>
+    <p>
+      JavaScript es el lenguaje que hace que las páginas web sean interactivas y dinámicas.
+      Permite que una página reaccione cuando el usuario hace clic, escribe, mueve el mouse o cambia algo.
+      Con JavaScript puedes mostrar mensajes de alerta, validar formularios, crear juegos o animaciones, cargar contenido sin recargar la página y modificar elementos en tiempo real.
+    </p>
+    <pre>
+function saludar() {
+  alert("¡Hola desde JS!");
+}
+    </pre>
+    <div class="nav-buttons">
+      <button onclick="mostrar('conceptos')">⬅ Volver</button>
+    </div>
+  </section>
+
+  <script>
+    function mostrar(id) {
+      document.querySelectorAll('.pagina, header').forEach(el => el.classList.remove('active'));
+      const seccion = document.getElementById(id);
+      seccion.classList.add('active');
+      setTimeout(() => {
+        seccion.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }, 50);
+    }
+  </script>
+</body>
+</html>
+
+
